@@ -1,30 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div class="menu">
+        <ul class="menu_nav">
+            <li class="menu_nav_li">
+                <router-link to="/">
+                    <span class="material-icons">home</span>首頁</router-link
+                >
+            </li>
+            <li class="menu_nav_li">
+                <router-link to="/stock_list">
+                    <span class="material-icons">description</span>列表
+                </router-link>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <router-view />
+    </div>
+
+    <div class="loading" v-if="this.$store.state.loadingShow">
+        loading
+    </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style lang="scss" src="./assets/scss/all.scss"></style>
+<script>
+export default {
+    mounted() {
+        this.$store.state.loadingShow = false;
+    },
+};
+</script>

@@ -1,0 +1,59 @@
+@mixin mw_xxl {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+@mixin mw_xl {
+	@media screen and (max-width: 1280px) {
+		@content;
+	}
+}
+@mixin mw_md {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin scrollbar($x, $y, $open: touch) {
+    overflow-x: $x;
+    overflow-y: $y;
+    -webkit-overflow-scrolling: $open;
+}
+// juc 預設值 flex-start 、 align-items 預設值 stretch
+@mixin d_f($flex, $ai: stretch, $jc: flex-start) {
+    display: $flex;
+    align-items: $ai;
+    justify-content: $jc;
+}
+// hover 動畫
+@mixin hoverHandler {
+    @media (pointer: fine) and (max-resolution: 2dppx),
+        screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+        (-moz-touch-enabled: 0) {
+        &:hover {
+            @content;
+        }
+    }
+    &:active {
+        @content;
+    }
+}
+
+// tb寬度
+
+$tb_num: 25;
+@while $tb_num > 0 {
+    ._tb_w#{$tb_num} {
+        width: $tb_num * 1%;
+    }
+    $tb_num: $tb_num - 1;
+}
+
+// 動畫
+%transition {
+    transition: all 0.3s ease-in-out;
+}
+// 手指
+%hand {
+    cursor: pointer;
+}

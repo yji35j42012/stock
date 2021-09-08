@@ -1,0 +1,8 @@
+.stock_list{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40px 60px auto 50px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+

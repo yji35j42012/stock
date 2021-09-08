@@ -1,0 +1,18 @@
+$btn_style: (
+    primary_bg: #007bff,
+    primary_color: #fff,
+    secondry_bg: #6c757d,
+    secondry_color: #fff,
+);
+
+$color: (
+    primary: rgba(56, 82, 118, 1),
+    secondry: rgba(145, 162, 187, 1),
+    tertiary: rgba(206, 211, 227, 1),
+    quaternary: rgba(227, 227, 233, 1),
+);
+@each $name, $value in $btn_style {
+    .txt_#{$name} {
+        color: $value !important;
+    }
+}
